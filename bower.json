@@ -1,0 +1,25 @@
+{
+  "name": "jquery-connections",
+  "homepage": "https://github.com/slavede/jquery-connections",
+  "authors": [
+    "Slaven <slaven.tomac@gmail.com>",
+    "Diamond/Musclesoft Crew"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9"
+  },
+  "description": "Bower version for jquery-connections (https://github.com/musclesoft/jquery-connections)",
+  "main": "jquery.connections.js",
+  "keywords": [
+    "jquery-connections",
+    "bower"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
