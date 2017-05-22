@@ -12,21 +12,38 @@ connection.right-border-width.bottom-border-width:after {
    position: absolute;
 }
 
-connection.vertical-down:after,
-connection.left-border-width.top-border-width:after,
-connection.right-border-width.top-border-width:after {
+/* arrow direction start */
+connection.vertical-down:after {
    transform: rotate(45deg);
    -webkit-transform: rotate(45deg);
    bottom: 0;
 }
 
-connection.vertical-up:after,
-connection.left-border-width.bottom-border-width:after,
-connection.right-border-width.bottom-border-width:after {
+connection.vertical-up:after {
    transform: rotate(-135deg);
    -webkit-transform: rotate(-135deg);
    top: 0;
 }
+
+connection.horizontal-right:after,
+connection.left-border-width.bottom-border-width:after,
+connection.left-border-width.top-border-width:after {
+   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
+   right: 0;
+}
+
+connection.horizontal-left:after,
+connection.right-border-width.top-border-width:after,
+connection.right-border-width.bottom-border-width:after {
+   transform: rotate(135deg);
+   -webkit-transform: rotate(135deg);
+   left: 0;
+}
+
+/* arrow direction end */
+
+/* horizontal/vertical fixes start */
 
 connection.vertical-down.left-border-width:after,
 connection.vertical-up.left-border-width:after {
@@ -36,21 +53,6 @@ connection.vertical-up.left-border-width:after {
 connection.vertical-down.right-border-width:after,
 connection.vertical-up.right-border-width:after {
    left: -3px;
-}
-
-
-
-
-connection.horizontal-right:after {
-   transform: rotate(-45deg);
-   -webkit-transform: rotate(-45deg);
-   right: 0;
-}
-
-connection.horizontal-left:after {
-   transform: rotate(135deg);
-   -webkit-transform: rotate(135deg);
-   left: 0;
 }
 
 connection.horizontal-right.top-border-width:after,
@@ -63,18 +65,18 @@ connection.horizontal-left.bottom-border-width:after {
    top: -3px;
 }
 
-connection.left-border-width.top-border-width:after {
-   left: -6px;
-}
+/* horizontal/vertical fixes end */
 
+/* diagonal connections start */
+
+connection.left-border-width.top-border-width:after,
 connection.right-border-width.top-border-width:after {
-   right: -6px;
+   top: -6px;
 }
 
-connection.left-border-width.bottom-border-width:after {
-   left: -6px;
-}
-
+connection.left-border-width.bottom-border-width:after,
 connection.right-border-width.bottom-border-width:after {
-   right: -6px;
+   bottom: -6px;
 }
+
+/* diagonal connections end */
