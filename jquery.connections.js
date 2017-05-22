@@ -173,11 +173,58 @@
 		height = b - t;
 		width <= 0 && (border_h = 0);
 		height <= 0 && (border_w = 0);
+		console.log('width');
+		console.log(width);
 		var style =
 				'border-' + v[0] + '-' + h[0] + '-radius: 0;' +
 				'border-' + v[0] + '-' + h[1] + '-radius: 0;' +
 				'border-' + v[1] + '-' + h[0] + '-radius: 0;';
 		(border_h <= 0 || border_w <= 0) && (style += 'border-' + v[1] + '-' + h[1] + '-radius: 0;');
+
+		$(connection).removeClass('vertical')
+						.removeClass('vertical-down')
+						.removeClass('vertical-up')
+						.removeClass('horizontal')
+						.removeClass('horizontal-right')
+						.removeClass('horizontal-left')
+						.removeClass('top-border-width')
+						.removeClass('bottom-border-width')
+						.removeClass('right-border-width')
+						.removeClass('left-border-width');
+
+		if (width === 0) {
+			$(connection).addClass('vertical');
+			if (from.top > to.top) {
+				$(connection).addClass('vertical-down');
+			} else {
+				$(connection).addClass('vertical-up');
+			}
+		}
+		if (height === 0) {
+			$(connection).addClass('horizontal');
+			if (from.left > to.left) {
+				$(connection).addClass('horizontal-right');
+			} else {
+				$(connection).addClass('horizontal-left');
+			}
+		}
+
+		if (data.css['border-right-width'] !== 0) {
+			$(connection).addClass('right-border-width');
+		}
+
+		if (data.css['border-left-width'] !== 0) {
+			$(connection).addClass('left-border-width');
+		}
+
+		if (data.css['border-top-width'] !== 0) {
+			$(connection).addClass('top-border-width');
+		}
+
+		if (data.css['border-bottom-width'] !== 0) {
+			$(connection).addClass('bottom-border-width');	
+		}
+
 		if (data.hidden) {
 			style += 'display: none;';
 		} else {

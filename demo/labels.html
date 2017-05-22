@@ -76,6 +76,63 @@
       .connection-border-bottom span {
          bottom: 1em;
       }
+
+   connection.vertical:after,
+   connection.horizontal:after {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      content: ' ';
+      position: absolute;
+   }
+
+   connection.vertical-down:after {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      bottom: 0;
+   }
+
+   connection.vertical-up:after {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      top: 0;
+   }
+
+   connection.vertical-down.left-border-width:after,
+   connection.vertical-up.left-border-width:after {
+      left: -6px;
+   }
+
+   connection.vertical-down.right-border-width:after,
+   connection.vertical-up.right-border-width:after {
+      left: -3px;
+   }
+
+
+
+
+   connection.horizontal-right:after {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      right: 0;
+   }
+
+   connection.horizontal-left:after {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      left: 0;
+   }
+
+   connection.horizontal-right.top-border-width:after,
+   connection.horizontal-left.top-border-width:after {
+      top: -6px;
+   }
+
+   connection.horizontal-right.bottom-border-width:after,
+   connection.horizontal-left.bottom-border-width:after {
+      top: -3px;
+   }
 </style>
 
 <script type="text/JavaScript">
